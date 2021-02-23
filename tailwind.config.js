@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       spacing: {
         '2px': '2px',
+        '10px': '10px',
         '14px': '14px',
         '15px': '15px',
         '16px': '16px',
@@ -19,9 +20,15 @@ module.exports = {
         '20px': '20px',
         '22px': '22px',
         '52px': '52px',
+        '59px': '59px',
+        '68px': '68px',
+        '81px': '81px',
+        '120px': '120px',
+
       },
       fontSize: {
         '14px': ['14px', '14px'],
+        '15px': ['15px', '15px'],
         '36px': ['36px', '36px'],
 
       },

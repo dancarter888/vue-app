@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-12 gap-0 static bg-opacity-100">
+  <div class="w-full grid grid-cols-12 gap-0 fixed bg-opacity-100">
     <div class="col-start-2 col-span-2 pt-15px">
       <div class="h-22px w-full border-solid border border-black rounded-full flex justify-center items-center">   
         <span class="text-black text-14px p-0">Search</span>
