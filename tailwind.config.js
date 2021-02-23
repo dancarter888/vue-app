@@ -30,6 +30,7 @@ module.exports = {
         '14px': ['14px', '14px'],
         '15px': ['15px', '15px'],
         '36px': ['36px', '36px'],
+        '50px': ['50px', '50px'],
 
       },
       letterSpacing: {
@@ -47,7 +48,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         // Simple 16 column grid
-        '18': 'repeat(18, minmax(0, 1fr))',
+        '20': 'repeat(20, minmax(0, 1fr))',
         // Simple 16 column grid
         '36': 'repeat(36, minmax(0, 1fr))',
        },
