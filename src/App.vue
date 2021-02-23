@@ -1,5 +1,7 @@
 <template>
-  <Navbar />
+  <div class="grid-cols-12 gap-0">
+    <Navbar />
+  </div>
 </template>
 
 <script>
