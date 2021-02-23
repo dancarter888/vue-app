@@ -10,6 +10,24 @@ module.exports = {
       'lg': '1440px',
     },
     extend: {
+      spacing: {
+        '2px': '2px',
+        '14px': '14px',
+        '15px': '15px',
+        '16px': '16px',
+        '19px': '19px',
+        '20px': '20px',
+        '22px': '22px',
+        '52px': '52px',
+      },
+      fontSize: {
+        '14px': ['14px', '14px'],
+        '36px': ['36px', '36px'],
+
+      },
+      letterSpacing: {
+        '2': '2px',
+      },
       colors:{
         green: {
           light: '#7DCA91',
@@ -20,8 +38,11 @@ module.exports = {
           baby: 'D8E9F0',
         }
       },
-      gridColumn: {
-        'span-16': 'span 36 / span 36',
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        '18': 'repeat(18, minmax(0, 1fr))',
+        // Simple 16 column grid
+        '36': 'repeat(36, minmax(0, 1fr))',
        },
        gridColumnStart: {
         '13': '13',

@@ -1,16 +1,19 @@
 <template>
-  <div class="grid-cols-12 gap-0">
+  <div class="bg-green-light">
     <Navbar />
+    <Main />
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
+import Main from './components/Main.vue'
 
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    Main
   }
 }
 </script>
