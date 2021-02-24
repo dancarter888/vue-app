@@ -4,24 +4,14 @@
           <span class="text-cream text-15px md:text-18px lg:text-20px">FILTER EVENTS</span>
       </div>
       <div class="col-start-9 col-span-3 md:col-start-18 md:col-span-2 lg:col-start-33 lg:col-span-3 flex justify-end">
-          <button class="text-green-light text-15px lg:text-16px" v-on:click="toggleExpand">{{isExpanded ? "Hide" : 'Show'}} Filter</button>
+          <button class="text-green-light text-15px lg:text-16px" @click="toggleExpand">{{isExpanded ? "Hide" : 'Show'}} Filter</button>
       </div>
   </div>
-  <div class="relative">
-    <Filters class="absolute -top-1px left-0 z-10" />
-    <div class="relative bg-white w-full z-0 transition-all duration-500 ease-in" v-bind:class="[isExpanded ? 'h-826px md:h-322px lg:h-362px' : 'h-0', errorClass]"></div>
-  </div>
-  <div class="relative bg-black w-full h-152px z-20"></div>
 </template>
 
 <script>
-import Filters from './Filters'
-
 export default {
     name: 'FilterHeader',
-    components: {
-        Filters,
-    },
     data() {
         return {
             isExpanded: false,
@@ -30,6 +20,7 @@ export default {
     methods: {
         toggleExpand() {
             this.isExpanded = !this.isExpanded
+            this.$emit('toggle')
         }
     }
 }
