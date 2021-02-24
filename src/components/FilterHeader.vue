@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-50px md:h-60px lg:h-120px grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0 bg-green-forest items-center">
+  <div class="w-full h-55px md:h-78px lg:h-140px grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0 bg-green-forest items-center">
       <div class="col-start-5 col-span-4 md:col-start-9 md:col-span-4 lg:col-start-17 flex justify-center">
           <span class="text-white text-15px md:text-18px lg:text-20px">FILTER EVENTS</span>
       </div>

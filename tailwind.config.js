@@ -11,7 +11,9 @@ module.exports = {
     },
     extend: {
       spacing: {
+        '1px': '1px',
         '2px': '2px',
+        '4px': '4px',
         '10px': '10px',
         '12px': '12px',
         '14px': '14px',
@@ -26,9 +28,11 @@ module.exports = {
         '40px': '40px',
         '50px': '50px',
         '52px': '52px',
+        '55px': '55px',
         '59px': '59px',
         '60px': '60px',
         '68px': '68px',
+        '78px': '78px',
         '81px': '81px',
         '120px': '120px',
         '140px': '140px',
@@ -39,6 +43,7 @@ module.exports = {
         '480px': '480px',
         '640px': '640px',
         '720px': '720px',
+        '727px': '727px',
         '960px': '960px',
 
       },
