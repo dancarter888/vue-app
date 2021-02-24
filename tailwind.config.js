@@ -13,12 +13,17 @@ module.exports = {
       spacing: {
         '2px': '2px',
         '10px': '10px',
+        '12px': '12px',
         '14px': '14px',
         '15px': '15px',
         '16px': '16px',
         '19px': '19px',
         '20px': '20px',
         '22px': '22px',
+        '25px': '25px',
+        '30px': '30px',
+        '35px': '35px',
+        '40px': '40px',
         '52px': '52px',
         '59px': '59px',
         '68px': '68px',
@@ -28,6 +33,7 @@ module.exports = {
       },
       fontSize: {
         '14px': ['14px', '14px'],
+        '16px': ['16px', '16px'],
         '15px': ['15px', '15px'],
         '36px': ['36px', '36px'],
         '50px': ['50px', '50px'],
@@ -47,9 +53,9 @@ module.exports = {
         }
       },
       gridTemplateColumns: {
-        // Simple 16 column grid
+        // Simple 20 column grid
         '20': 'repeat(20, minmax(0, 1fr))',
-        // Simple 16 column grid
+        // Simple 36 column grid
         '36': 'repeat(36, minmax(0, 1fr))',
        },
        gridColumnStart: {
