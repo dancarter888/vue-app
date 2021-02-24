@@ -7,11 +7,16 @@
           <button class="text-green-light text-15px lg:text-16px">Show Filter</button>
       </div>
   </div>
+  <Filters />
 </template>
 
 <script>
-export default {
-    name: 'FilterHeader'
+import Filters from './Filters'
 
+export default {
+    name: 'FilterHeader',
+    components: {
+        Filters,
+    }
 }
-</script>
+</script>   
