@@ -29,6 +29,15 @@ module.exports = {
         '68px': '68px',
         '81px': '81px',
         '120px': '120px',
+        '140px': '140px',
+        '180px': '180px',
+        '200px': '200px',
+        '239px': '239px',
+        '315px': '315px',
+        '480px': '480px',
+        '640px': '640px',
+        '720px': '720px',
+        '960px': '960px',
 
       },
       fontSize: {
@@ -37,6 +46,7 @@ module.exports = {
         '15px': ['15px', '15px'],
         '36px': ['36px', '36px'],
         '50px': ['50px', '50px'],
+        '60px': ['60px', '60px'],
 
       },
       letterSpacing: {
@@ -110,7 +120,10 @@ module.exports = {
         '35': '35',
         '36': '36',
        },
-
+       gridColumn: {
+        'span-11': 'span 11 / span 11',
+        'span-16': 'span 16 / span 16',
+       },
     }
   },
   variants: {
