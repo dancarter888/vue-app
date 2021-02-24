@@ -8,8 +8,8 @@
       </div>
   </div>
   <div class="relative">
-    <Filters class="absolute top-0 left-0 z-10" />
-    <div class="relative bg-white w-full z-0 transition-all duration-500 ease-in" v-bind:class="[isExpanded ? 'h-152px' : 'h-0', errorClass]"></div>
+    <Filters class="absolute -top-1px left-0 z-10" />
+    <div class="relative bg-white w-full z-0 transition-all duration-500 ease-in" v-bind:class="[isExpanded ? 'h-826px md:h-322px lg:h-362px' : 'h-0', errorClass]"></div>
   </div>
   <div class="relative bg-black w-full h-152px z-20"></div>
 </template>

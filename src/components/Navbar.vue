@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0 fixed bg-opacity-100">
+  <div class="w-full grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0 fixed bg-opacity-100 z-30">
     <div class="col-start-2 col-span-2 md:col-start-2 md:col-span-3 lg:col-start-2 lg:col-span-4 pt-15px md:pt-20px lg:pt-30px">
       <Searchbar />
     </div>
