@@ -14,6 +14,8 @@ module.exports = {
         '1px': '1px',
         '2px': '2px',
         '4px': '4px',
+        '7px': '7px',
+        '8px': '8px',
         '10px': '10px',
         '12px': '12px',
         '14px': '14px',
@@ -36,6 +38,7 @@ module.exports = {
         '81px': '81px',
         '120px': '120px',
         '140px': '140px',
+        '152px': '152px',
         '180px': '180px',
         '200px': '200px',
         '239px': '239px',
@@ -66,9 +69,9 @@ module.exports = {
           light: '#7DCA91',
           forest: '#245B50',
         },
-        cream: 'F0EEE7',
+        cream: '#F0EEE7',
         blue: {
-          baby: 'D8E9F0',
+          baby: '#D8E9F0',
         }
       },
       gridTemplateColumns: {
@@ -136,7 +139,11 @@ module.exports = {
     }
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['checked'],
+      borderColor: ['checked'],
+      height: ['hover'],
+    },
   },
   plugins: [],
 }
