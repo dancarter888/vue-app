@@ -1,13 +1,8 @@
 <template>
-    <h3 class=" pb-8px w-full flex justify-center">Filter Type</h3>
+    <h3 class=" pb-8px w-full flex justify-center">Filter {{ name }}</h3>
     <hr class="filter-border"/>
     <form class="flex-col text-15px">
-        <Filter />
-        <Filter />
-        <Filter />
-        <Filter />
-        <Filter />
-        <Filter />
+        <Filter v-for="value in values" :key="value" :name="name" :value="value"/>
     </form>
 </template>
 
@@ -18,7 +13,13 @@ export default {
     name: 'FilterGroup',
     components: {
         Filter
+    },
+    props: {
+        name: String,
+        values: Array,
+    },
+    mounted() {
+        console.log(this.name, this.values)
     }
-
 }
 </script>
