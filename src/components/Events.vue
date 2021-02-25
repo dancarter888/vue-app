@@ -1,27 +1,40 @@
 <template>
-<div class="w-full grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0 bg-white">
-    <div class="col-start-1 col-end-13 md:col-start-2 md:col-end-20 lg:col-start-2 lg:col-end-35">
-        <div class="w-full grid grid-cols-12 md:grid-cols-18 lg:grid-cols-33 gap-0 bg-white">
-            <template v-for="(event, index) in events" :key="index">
-                <div class="col-span-1 md:col-span-1 lg:col-span-2">{{index}}</div>
-                <div class="col-span-10 md:col-span-7 lg:col-span-8">
-                    sasas
-                    <br>
-                    <br>
-                </div>
-                <div class="col-span-1 md:col-span-1 lg:col-span-1">{{index}}</div>
-            </template>
+    <div class="py-30px md:py-60px lg:py-80px bg-white">
+        <EventGrid :data="data" :eventsLoaded="eventsLoaded"/>
+        <div class="w-full grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0">
+            <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-8 lg:col-start-15 lg:col-span-8">
+                <button v-if="eventsLoaded != data.length - 1" class="w-full h-35px lg:h-40px border-solid border border-green-forest rounded-full flex justify-center items-center" @click="loadMore">
+                    <span class="text-15 lg:text-16px text-green-forest">Load More</span>
+                </button>
+            </div>
         </div>
     </div>
-</div>
+    
 </template>
 
 <script>
+import EventGrid from './EventGrid.vue'
+
 export default {
     name: 'Events',
+    components: {
+        EventGrid
+    },
+    props: {
+        data: Array,
+    },
     data() {
-        return {    
-            events: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        return {
+            eventsLoaded: 12,
+        }
+    },
+    methods: {
+        loadMore() {
+            if (this.eventsLoaded + 12 >= this.data.length) {
+                this.eventsLoaded = this.data.length - 1
+            } else {
+                this.eventsLoaded += 12
+            }
         }
     }
 }

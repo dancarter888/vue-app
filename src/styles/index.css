@@ -6,6 +6,6 @@
   @apply h-1px w-full bg-cream;
 }
 
-.radio-btn {
+.chkbx {
   @apply cursor-pointer rounded-full border-solid border border-cream appearance-none checked:bg-cream focus:outline-none;
 }

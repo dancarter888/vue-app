@@ -4,11 +4,11 @@
     <Main />
     <FilterHeader @toggle="toggleExpand"/>
     <div class="relative">
-      <Filters class="absolute -top-1px left-0 z-10" :isExpanded="isExpanded" @expand="changeHeight"/>
+      <Filters class="absolute -top-1px left-0 z-10" :filters="filters" :isExpanded="isExpanded" @expand="changeHeight"/>
       <div class="relative bg-white w-full z-0 transition-all duration-500 ease-in-out" :style="isExpanded ? {height: expandHeight + 'px'} : {height: '0px'}"></div>
     </div>
     <div class="relative z-20">
-      <Events />
+      <Events :data="fakedData"/>
     </div>
   </div>
 </template>
@@ -20,6 +20,34 @@ import FilterHeader from './components/FilterHeader.vue'
 import Filters from './components/Filters.vue'
 import Events from './components/Events.vue'
 
+var faker = require('faker');
+
+var DATA_SIZE = 30
+var fakedData = []
+var filters = {
+  manufacturer: new Set(),
+  type: new Set(),
+  color: new Set(),
+}
+
+for (let i=0; i<DATA_SIZE; i++) {
+  fakedData.push(
+    {
+      vehicle: faker.vehicle.vehicle(),
+      manufacturer: faker.vehicle.manufacturer(),
+      model: faker.vehicle.model(),
+      type: faker.vehicle.type(),
+      color: faker.vehicle.color(),
+      img: faker.image.image()
+    }
+  )
+}
+
+for (let i=0; i<fakedData.length; i++) {
+  filters.manufacturer.add(fakedData[i].manufacturer)
+  filters.type.add(fakedData[i].type)
+  filters.color.add(fakedData[i].color)
+}
 
 export default {
   name: 'App',
@@ -32,6 +60,8 @@ export default {
   },
   data() {
     return {
+      fakedData,
+      filters,
       expandHeight: 0,
       isExpanded: false,
     }
@@ -45,5 +75,9 @@ export default {
       this.expandHeight = height;
     }
   },
+  mounted() {
+    console.log(this.fakedData)
+    console.log(this.filters)
+  }
 }
 </script>
