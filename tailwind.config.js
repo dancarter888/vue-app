@@ -80,7 +80,13 @@ module.exports = {
       },
       gridTemplateColumns: {
         // Simple 20 column grid
+        '18': 'repeat(18, minmax(0, 1fr))',
+        // Simple 20 column grid
+        '19': 'repeat(19, minmax(0, 1fr))',
+        // Simple 20 column grid
         '20': 'repeat(20, minmax(0, 1fr))',
+        // Simple 36 column grid
+        '33': 'repeat(33, minmax(0, 1fr))',
         // Simple 36 column grid
         '36': 'repeat(36, minmax(0, 1fr))',
        },
