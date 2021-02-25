@@ -4,7 +4,7 @@
       <Searchbar />
     </div>
     <div class="col-start-6 col-span-2 md:col-start-10 lg:col-start-18 pt-16px md:pt-22px lg:pt-30px flex justify-center">
-      <img class="h-19px w-60px md:h-30px md:w-97px" :src='venuesLogo' />
+      <img class="h-19px w-60px md:h-30px md:w-97px cursor-pointer" :src='venuesLogo' />
     </div>
     <div class="col-start-11 col-span-1 md:col-start-19 lg:col-start-35 pt-16px md:pt-25px lg:pt-30px flex justify-center">
       <Hamburger />

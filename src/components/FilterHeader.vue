@@ -4,7 +4,7 @@
           <span class="text-cream text-15px md:text-18px lg:text-20px">FILTER EVENTS</span>
       </div>
       <div class="col-start-9 col-span-3 md:col-start-18 md:col-span-2 lg:col-start-33 lg:col-span-3 flex justify-end">
-          <button class="text-green-light text-15px lg:text-16px" @click="toggleExpand">{{isExpanded ? "Hide" : 'Show'}} Filter</button>
+          <button class="text-green-light text-15px lg:text-16px appearance-none focus:outline-none" @click="toggleExpand">{{isExpanded ? "Hide" : 'Show'}} Filter</button>
       </div>
   </div>
 </template>
