@@ -4,22 +4,11 @@
     <Main />
     <FilterHeader @toggle="toggleExpand"/>
     <div class="relative">
-      <Filters class="absolute -top-1px left-0 z-10" />
-      <div class="relative bg-white w-full z-0 transition-all duration-500 ease-in"  :class="[isExpanded ? 'h-826px md:h-322px lg:h-362px' : 'h-0']"></div>
+      <Filters class="absolute -top-1px left-0 z-10" :isExpanded="isExpanded" @expand="changeHeight"/>
+      <div class="relative bg-white w-full z-0 transition-all duration-500 ease-in" :style="isExpanded ? {height: expandHeight + 'px'} : {height: '0px'}"></div>
     </div>
     <div class="relative z-20">
-      xsas
-      asd
-      sad
-      sad
-      sad
-      sad
-      a
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <Events />
     </div>
   </div>
 </template>
@@ -29,6 +18,8 @@ import Navbar from './components/Navbar.vue'
 import Main from './components/Main.vue'
 import FilterHeader from './components/FilterHeader.vue'
 import Filters from './components/Filters.vue'
+import Events from './components/Events.vue'
+
 
 export default {
   name: 'App',
@@ -37,16 +28,22 @@ export default {
     Main,
     FilterHeader,
     Filters,
+    Events,
   },
   data() {
     return {
-      isExpanded: false
+      expandHeight: 0,
+      isExpanded: false,
     }
   },
   methods: {
     toggleExpand() {
       this.isExpanded = !this.isExpanded
     },
-  }
+    changeHeight(height) {
+      console.log(height)
+      this.expandHeight = height;
+    }
+  },
 }
 </script>
