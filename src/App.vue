@@ -4,11 +4,11 @@
     <Main />
     <FilterHeader @toggle="toggleExpand"/>
     <div class="relative">
-      <Filters class="absolute -top-1px left-0 z-10" :filters="filters" :isExpanded="isExpanded" @expand="changeHeight"/>
+      <Filters class="absolute -top-1px left-0 z-10" :filters="filters" :isExpanded="isExpanded" @expand="changeHeight" @addFilter="addFilter" @removeFilter="removeFilter"/>
       <div class="relative bg-white w-full z-0 transition-all duration-500 ease-in-out" :style="isExpanded ? {height: expandHeight + 'px'} : {height: '0px'}"></div>
     </div>
     <div class="relative z-20">
-      <Events :data="fakedData"/>
+      <Events :data="fakedData" :checkedFilters="checkedFilters"/>
     </div>
   </div>
 </template>
@@ -62,6 +62,11 @@ export default {
     return {
       fakedData,
       filters,
+      checkedFilters: {
+        manufacturer: new Set(),
+        type: new Set(),
+        color: new Set()
+      },
       expandHeight: 0,
       isExpanded: false,
     }
@@ -73,6 +78,22 @@ export default {
     changeHeight(height) {
       console.log(height)
       this.expandHeight = height;
+    },
+    addFilter(checked) {
+        for (let entry of Object.entries(this.checkedFilters)) {
+          if (entry[0] == checked.name.charAt(0).toLowerCase() + checked.name.slice(1)) {
+            
+            entry[1].add(checked.value)
+          }
+        }
+        console.log(this.checkedFilters)
+    },
+    removeFilter(checked) {
+        for (let entry of Object.entries(this.checkedFilters)) {
+          if (entry[0] == checked.name.charAt(0).toLowerCase() + checked.name.slice(1)) {
+            entry[1].delete(checked.value)
+          }
+        }
     }
   },
   mounted() {
