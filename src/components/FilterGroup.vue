@@ -11,6 +11,7 @@ import Filter from './Filter.vue'
 
 export default {
     name: 'FilterGroup',
+    emits: ['addFilter', 'removeFilter'],
     components: {
         Filter
     },

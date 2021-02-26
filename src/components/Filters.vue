@@ -24,6 +24,7 @@ export default {
         filters: Object,
         isExpanded: Boolean
     },
+    emits: ['expand', 'addFilter', 'removeFilter'],
     methods: {
         checkHeight() {
             this.$emit('expand', this.$refs.filters.clientHeight)

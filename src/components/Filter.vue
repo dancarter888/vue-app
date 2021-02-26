@@ -13,6 +13,7 @@ export default {
         name: String,
         value: String
     },
+    emits: ['checked', 'unChecked'],
     data() {
         return {
             checked: false

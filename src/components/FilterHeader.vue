@@ -12,6 +12,7 @@
 <script>
 export default {
     name: 'FilterHeader',
+    emits: ['toggle'],
     data() {
         return {
             isExpanded: false,
