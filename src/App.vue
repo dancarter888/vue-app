@@ -80,25 +80,37 @@ export default {
       this.expandHeight = height;
     },
     addFilter(checked) {
-        for (let entry of Object.entries(this.checkedFilters)) {
-          if (entry[0] == checked.name.charAt(0).toLowerCase() + checked.name.slice(1)) {
-            
-            entry[1].add(checked.value)
-          }
+        let currentFilters = {...this.checkedFilters}
+
+        switch (checked.name) {
+          case "Manufacturer":
+            currentFilters.manufacturer.add(checked.value)
+            break
+          case "Type":
+            currentFilters.type.add(checked.value)
+            break
+          case "Color":
+            currentFilters.color.add(checked.value)
+            break
         }
-        console.log(this.checkedFilters)
+        this.checkedFilters = currentFilters
     },
     removeFilter(checked) {
-        for (let entry of Object.entries(this.checkedFilters)) {
-          if (entry[0] == checked.name.charAt(0).toLowerCase() + checked.name.slice(1)) {
-            entry[1].delete(checked.value)
-          }
+        let currentFilters = {...this.checkedFilters}
+
+        switch (checked.name) {
+          case "Manufacturer":
+            currentFilters.manufacturer.delete(checked.value)
+            break
+          case "Type":
+            currentFilters.type.delete(checked.value)
+            break
+          case "Color":
+            currentFilters.color.delete(checked.value)
+            break
         }
+        this.checkedFilters = currentFilters
     }
   },
-  mounted() {
-    console.log(this.fakedData)
-    console.log(this.filters)
-  }
 }
 </script>

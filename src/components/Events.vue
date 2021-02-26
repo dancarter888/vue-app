@@ -1,9 +1,9 @@
 <template>
     <div class="py-30px md:py-60px lg:py-80px bg-white">
-        <EventGrid :eventsToLoad="data" :eventsLoaded="eventsLoaded"/>
+        <EventGrid :eventsToLoad="eventsToLoad" :numToLoad="numToLoad"/>
         <div class="w-full grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0">
             <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-8 lg:col-start-15 lg:col-span-8">
-                <button v-if="eventsLoaded != data.length - 1" class="w-full h-35px lg:h-40px border-solid border border-green-forest rounded-full flex justify-center items-center focus:outline-none" @click="loadMore">
+                <button v-if="numToLoad < eventsToLoad.length" class="w-full h-35px lg:h-40px border-solid border border-green-forest rounded-full flex justify-center items-center focus:outline-none" @click="loadMore">
                     <span class="text-15 lg:text-16px text-green-forest">Load More</span>
                 </button>
             </div>
@@ -25,30 +25,49 @@ export default {
         checkedFilters: Object
     },
     data() {
-        return {
-            eventsLoaded: 12,
+        return{
+            moreToLoad: 0,
+            initialLoad: 12
         }
     },
     computed: {
         eventsToLoad() {
-            return (this.checkedFilters, this.data)            
+            let toLoad = []
+
+            this.data.map(entry => {
+                if ((this.checkedFilters.manufacturer.size == 0 || this.checkedFilters.manufacturer.has(entry.manufacturer))
+                && (this.checkedFilters.type.size == 0 || this.checkedFilters.type.has(entry.type))
+                && (this.checkedFilters.color.size == 0 || this.checkedFilters.color.has(entry.color))) {
+                    console.log("accepted", entry)
+                    toLoad.push(entry)
+                }
+            })
+            console.log('toLoad', toLoad)
+                // console.log('entry', entry)
+                // if (entry.manufacturer in this.checkedFilters.manufacturer
+                //     && entry.type in this.checkedFilters.type
+                //     && entry.color in this.checkedFilters.color) {
+                //         console.log("accepted", entry)
+                //     }  
+            return toLoad      
+        },
+        numToLoad() {
+            if (this.initialLoad + this.moreToLoad > this.eventsToLoad.length) {
+                return this.eventsToLoad.length
+            } else {
+                return this.initialLoad + this.moreToLoad
+            }
         }
     },
     methods: {
         loadMore() {
-            if (this.eventsLoaded + 12 >= this.data.length) {
-                this.eventsLoaded = this.data.length - 1
-            } else {
-                this.eventsLoaded += 12
-            }
+            this.moreToLoad += 12
         }
     },
-    mounted() {
-        console.log(this.checkedFilters)
-    },
-    updated() {
-        console.log(this.eventsToLoad)
-        console.log(this.checkedFilters)
+    watch: { 
+        checkedFilters: function() { // watch it
+            this.moreToLoad = 0
+        }
     }
 }
 </script>
