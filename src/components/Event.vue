@@ -12,7 +12,7 @@
             <div class="text-15px md:text-16px text-green-forest">
                 <p class="flex justify-center mb-15px">{{event.type}}, {{event.color}}</p>
                 <div class="w-full flex justify-center">
-                    <button>View Event</button>
+                    <button><a>View Event</a></button>
                 </div>
             </div>
         </div>

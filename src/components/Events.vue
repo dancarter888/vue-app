@@ -33,22 +33,13 @@ export default {
     computed: {
         eventsToLoad() {
             let toLoad = []
-
             this.data.map(entry => {
                 if ((this.checkedFilters.manufacturer.size == 0 || this.checkedFilters.manufacturer.has(entry.manufacturer))
                 && (this.checkedFilters.type.size == 0 || this.checkedFilters.type.has(entry.type))
                 && (this.checkedFilters.color.size == 0 || this.checkedFilters.color.has(entry.color))) {
-                    console.log("accepted", entry)
                     toLoad.push(entry)
                 }
             })
-            console.log('toLoad', toLoad)
-                // console.log('entry', entry)
-                // if (entry.manufacturer in this.checkedFilters.manufacturer
-                //     && entry.type in this.checkedFilters.type
-                //     && entry.color in this.checkedFilters.color) {
-                //         console.log("accepted", entry)
-                //     }  
             return toLoad      
         },
         numToLoad() {
