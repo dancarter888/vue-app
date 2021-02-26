@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer utilities {
-  .width-110 {
-    width: 110%;
+  .grid-responsive {
+    @apply w-full grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0;
   }
 }
 

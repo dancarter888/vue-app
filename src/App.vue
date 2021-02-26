@@ -8,7 +8,9 @@
       <div class="relative bg-white w-full z-0 transition-all duration-500 ease-in-out" :style="isExpanded ? {height: expandHeight + 'px'} : {height: '0px'}"></div>
     </div>
     <div class="relative z-20">
-      <Events :data="fakedData" :checkedFilters="checkedFilters"/>
+      <Events :data="fakedData" :checkedFilters="checkedFilters" />
+      <Footer />
+      <SignUp />
     </div>
   </div>
 </template>
@@ -19,6 +21,7 @@ import Main from './components/Main.vue'
 import FilterHeader from './components/FilterHeader.vue'
 import Filters from './components/Filters.vue'
 import Events from './components/Events.vue'
+import Footer from './components/Footer.vue'
 
 var faker = require('faker');
 
@@ -57,6 +60,7 @@ export default {
     FilterHeader,
     Filters,
     Events,
+    Footer,
   },
   data() {
     return {

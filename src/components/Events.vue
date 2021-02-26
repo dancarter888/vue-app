@@ -1,7 +1,7 @@
 <template>
     <div class="py-30px md:py-60px lg:py-80px bg-white">
         <EventGrid :eventsToLoad="eventsToLoad" :numToLoad="numToLoad"/>
-        <div class="w-full grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0">
+        <div class="grid-responsive">
             <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-8 lg:col-start-15 lg:col-span-8">
                 <button v-if="numToLoad < eventsToLoad.length" class="w-full h-35px lg:h-40px border-solid border border-green-forest rounded-full flex justify-center items-center focus:outline-none" @click="loadMore">
                     <span class="text-15 lg:text-16px text-green-forest">Load More</span>

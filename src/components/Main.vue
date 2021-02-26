@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full grid grid-cols-12 md:grid-cols-20 lg:grid-cols-36 gap-0 bg-green-light pt-120px md:pt-200px lg:pt-180px">
+  <div class="grid-responsive bg-green-light pt-120px md:pt-200px lg:pt-180px">
     <div class="col-start-4 col-span-6 md:col-start-7 md:col-span-8 lg:col-start-15 lg:col-span-8 flex justify-center">
       <h1 class="text-green-forest text-36px md:text-50px lg:text-60px tracking-tighter">WHAT'S ON</h1>
     </div>
