@@ -22,6 +22,7 @@ import FilterHeader from './components/FilterHeader.vue'
 import Filters from './components/Filters.vue'
 import Events from './components/Events.vue'
 import Footer from './components/Footer.vue'
+import SignUp from './components/SignUp.vue'
 
 var faker = require('faker');
 
@@ -61,6 +62,7 @@ export default {
     Filters,
     Events,
     Footer,
+    SignUp
   },
   data() {
     return {
