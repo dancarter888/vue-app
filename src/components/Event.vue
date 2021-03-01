@@ -2,7 +2,7 @@
     <div class="w-full grid grid-cols-12 md:grid-cols-9 lg:grid-cols-11 gap-0 bg-white hover:bg-cream lg:mb-40px">
         <div class="col-start-2 col-end-12 md:col-start-2 md:col-end-9 lg:col-start-2 lg:col-end-10 my-50px lg:mt-40px flex-col relative hover:bg-cream">
             <div class="absolute top-0 w-full">
-                <h3 class="text-18px md:text-20px text-green-forest flex justify-center text-center">{{event.manufacturer.toUpperCase()}} - {{event.vehicle.toUpperCase()}}</h3>
+                <h3 class="text-18px md:text-20px text-green-forest flex justify-center text-center">{{event.manufacturer}} - {{event.vehicle}}</h3>
             </div>
             <div class="flex justify-center pt-45px md:pt-50px lg:pt-65px relative z-20">
                 <div class="flex items-center justify-center overflow-hidden mt-14px mb-20px">
